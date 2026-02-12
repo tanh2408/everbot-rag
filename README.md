@@ -1,7 +1,3 @@
-Dưới đây là bản hoàn chỉnh để bạn **copy–paste trực tiếp vào `README.md`**:
-
----
-
 # Everbot Offline RAG (Law PDF)
 
 This project implements an **offline RAG pipeline** over a law document PDF
