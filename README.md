@@ -65,6 +65,143 @@ Reviewers can verify that:
 
 ---
 
+# 🧩 Ollama Installation & Model Setup
+
+## 1️⃣ Install Ollama
+
+### Windows
+
+Download and install from:
+
+```
+https://ollama.com/download
+```
+
+After installation, verify:
+
+```bash
+ollama --version
+```
+
+---
+
+### macOS
+
+```bash
+brew install ollama
+```
+
+Start Ollama:
+
+```bash
+ollama serve
+```
+
+---
+
+### Linux
+
+```bash
+curl -fsSL https://ollama.com/install.sh | sh
+```
+
+Then start:
+
+```bash
+ollama serve
+```
+
+---
+
+## 2️⃣ Pull Required LLM Model
+
+This project uses:
+
+```
+qwen2.5:7b-instruct
+```
+
+Pull the model once (internet required only the first time):
+
+```bash
+ollama pull qwen2.5:7b-instruct
+```
+
+Verify:
+
+```bash
+ollama list
+```
+
+You should see:
+
+```
+qwen2.5:7b-instruct
+```
+
+---
+
+## 3️⃣ (Optional) Change Model
+
+If you want to use another Ollama model:
+
+```bash
+python rag_ollama_min.py build --llm-model llama3:8b
+```
+
+or
+
+```bash
+python rag_ollama_min.py ask "your question" --llm-model llama3:8b
+```
+
+---
+
+# 📦 Embedding Model (SentenceTransformer)
+
+This project uses:
+
+```
+intfloat/multilingual-e5-base
+```
+
+The embedding model will automatically download on first run.
+
+For fully offline usage after first download:
+
+Set environment variables:
+
+```bash
+set HF_HUB_OFFLINE=1
+set TRANSFORMERS_OFFLINE=1
+```
+
+(macOS/Linux)
+
+```bash
+export HF_HUB_OFFLINE=1
+export TRANSFORMERS_OFFLINE=1
+```
+
+---
+
+# 🔒 Fully Offline Mode Checklist
+
+Before going offline:
+
+* Pull Ollama model:
+
+  ```
+  ollama pull qwen2.5:7b-instruct
+  ```
+* Run build once (downloads embedding model)
+* Confirm everything works
+* Then disconnect internet
+
+After that, the system runs fully offline.
+
+---
+
 # 🗂 Folder Structure
 
 ```
