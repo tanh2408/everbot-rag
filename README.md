@@ -1,4 +1,4 @@
-# Everbot Offline RAG (Law PDF) — Refactored Package
+# Everbot Offline RAG (Law PDF)
 
 This package implements an **offline RAG pipeline** for a law PDF (example: `中華民國憲法.pdf`).
 It is designed to be **audit-friendly** for reviews:
