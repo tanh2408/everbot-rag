@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+.env
+
+# Virtual env
+venv/
+.venv/
+
+# RAG artifacts
+law.index
+law_chunks.jsonl
+articles_extracted.jsonl
+law_ontology.json
+
+# HuggingFace cache
+.cache/
